@@ -12,11 +12,12 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}              " coc-java extension
     Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}              " coc-yaml extension
 
+    Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}         " file browsing
+
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
     Plug 'NLKNguyen/papercolor-theme'                                               " eye-friendly colorscheme
     Plug 'itchyny/lightline.vim'                                                    " status bar
-    Plug 'scrooloose/nerdtree'                                                      " file browsing
     Plug 'jiangmiao/auto-pairs'                                                     " brackets auto-closing
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
@@ -206,7 +207,7 @@ endfunction
 " --------------------------------------------------------------------------------
 " nerdtree
 " --------------------------------------------------------------------------------
-noremap <F2> :NERDTreeToggle<CR>
+noremap <F2> :CocCommand explorer<CR>
 
 " --------------------------------------------------------------------------------
 " editorconfig-vim
