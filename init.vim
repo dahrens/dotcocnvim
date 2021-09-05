@@ -15,6 +15,8 @@ call plug#begin('~/.cocnvim/plugged')
 
     Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}         " file browsing
 
+    Plug 'puremourning/vimspector'                                                  " debugger
+
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
     Plug 'NLKNguyen/papercolor-theme'                                               " eye-friendly colorscheme
@@ -213,3 +215,20 @@ noremap <F2> :CocCommand explorer<CR>
 " editorconfig-vim
 " --------------------------------------------------------------------------------
 let g:EditorConfig_max_line_indicator = "none"
+
+" debugger adapters
+let g:vimspector_install_gadgets = [ 'debugpy' ]
+" debugger keybindings
+nmap <leader><F4> :<c-u>call vimspector#Reset()<CR>
+nmap <F4>         <Plug>VimspectorRestart
+nmap <F5>         <Plug>VimspectorContinue
+nmap <leader><F5> <Plug>VimspectorLaunch
+nmap <F6>         <Plug>VimspectorPause
+nmap <F7>         <Plug>VimspectorStop
+nmap <F8>         <Plug>VimspectorAddFunctionBreakpoint
+nmap <leader><F8> <Plug>VimspectorRunToCursor
+nmap <F9>         <Plug>VimspectorToggleBreakpoint
+nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
+nmap <F10>        <Plug>VimspectorStepOver
+nmap <F11>        <Plug>VimspectorStepInto
+nmap <F12>        <Plug>VimspectorStepOut
