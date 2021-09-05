@@ -126,8 +126,8 @@ inoremap <expr> <cr> (pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>")
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> <c-h> <Plug>(coc-diagnostic-prev)
+nmap <silent> <c-l> <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
