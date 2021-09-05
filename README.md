@@ -6,8 +6,6 @@ Experimental (neo)vim configuration utilizing coc.nvim and related extension plu
 
 Requirements:
 - python-neovim
-- python2-neovim
-- neovim-nightly (required for floating windows coming in 0.4)
 - npm (npx is used during installation)
 - nodejs (see https://github.com/neoclide/coc.nvim)
 - yarn (see https://github.com/neoclide/coc.nvim)
@@ -23,6 +21,10 @@ mv .config/nvim .config/nvim.bak  # backup current neovim configuration if prese
 git clone https://github.com/necabo/dotcocnvim.git .cocnvim
 cd .cocnvim && ./install.sh
 ```
+
+## Inlcuded plugins
+
+Have a look at `init.vim`.
 
 ## Usage
 
