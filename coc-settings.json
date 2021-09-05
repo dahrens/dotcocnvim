@@ -3,7 +3,6 @@
 
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
     "rust-analyzer.checkOnSave.command": "clippy",
-    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
     "rust-analyzer.procMacro.enable": true,
 
     "python.linting.flake8Enabled": true,
@@ -13,11 +12,6 @@
     "python.formatting.blackArgs": ["--experimental-string-processing"],
 
     "git.enableGutters": true,
-
-    "latex.build.onSave": false,
-    "latex.build.args": ["-pdf", "-interaction=nonstopmode", "-synctex=1", "-pvc"],
-    "latex.forwardSearch.executable": "zathura",
-    "latex.forwardSearch.args": ["--synctex-forward", "%l:1:%f", "%p"],
 
     "languageserver": {
         "ccls": {
