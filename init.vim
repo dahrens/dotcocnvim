@@ -3,6 +3,7 @@ call plug#begin('~/.cocnvim/plugged')
     " coc and extension plugins
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}              " completions, LSP, etc.
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}              " coc-json extension
+    Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}             " coc-pairs extension
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}               " coc-git extension
     Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}          " coc-snippets extension
     Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}         " coc-highlight extension
@@ -17,7 +18,6 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
     Plug 'NLKNguyen/papercolor-theme'                                               " eye-friendly colorscheme
     Plug 'itchyny/lightline.vim'                                                    " status bar
-    Plug 'jiangmiao/auto-pairs'                                                     " brackets auto-closing
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
     Plug 'puremourning/vimspector'                                                  " debugger
