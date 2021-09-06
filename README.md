@@ -5,6 +5,7 @@ Experimental (neo)vim configuration utilizing coc.nvim and related extension plu
 ## Install
 
 Requirements:
+
 - python-neovim
 - npm (npx is used during installation)
 - nodejs (see https://github.com/neoclide/coc.nvim)
@@ -22,15 +23,6 @@ git clone https://github.com/necabo/dotcocnvim.git .cocnvim
 cd .cocnvim && ./install.sh
 ```
 
-## Included plugins
-
-Have a look at `init.vim`.
-
 ## Usage
 
-| Key                          | Description                   |
-| ---------------------------- | ----------------------------- |
-| <kbd>F1</kbd>                | open :help                    |
-| <kbd>F2</kbd>                | open file browser (nerd tree) |
-| <kbd>F3</kbd>                | toggle paste mode             |
-| <kbd>Ctrl</kbd>-<kbd>p</kbd> | open fuzzy find               |
+The plugins and key mappings are documented in [a wiki](wiki/index.md) maintainable and useable from within you nvim using `<leader>ww`.

@@ -21,6 +21,7 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
     Plug 'puremourning/vimspector'                                                  " debugger
+    Plug 'vimwiki/vimwiki'                                                          " well - a wiki, for vim
 
     " tpope is awesome!
     Plug 'tpope/vim-fugitive'                                                       " git integration
@@ -230,3 +231,10 @@ nmap <leader><F9> <Plug>VimspectorToggleConditionalBreakpoint
 nmap <F10>        <Plug>VimspectorStepOver
 nmap <F11>        <Plug>VimspectorStepInto
 nmap <F12>        <Plug>VimspectorStepOut
+
+" for vimwiki
+set nocompatible  " this is default as soon as the is a local .vimrc, as it is explicitly asked for, keep it
+filetype plugin on
+" syntax on  " this is already set by a plugin
+let g:vimwiki_list = [{'path': '~/.config/nvim/wiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0  " don't threat all .md files with filetype vimwiki
