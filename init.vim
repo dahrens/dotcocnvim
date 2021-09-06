@@ -3,20 +3,16 @@ call plug#begin('~/.cocnvim/plugged')
     " coc and extension plugins
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}              " completions, LSP, etc.
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}              " coc-json extension
-
-    Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}  " coc-rust-analyzer extension
-
-    Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}        " coc-pyright extension
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}               " coc-git extension
     Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}          " coc-snippets extension
     Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}         " coc-highlight extension
     Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}              " coc-java extension
     Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}              " coc-yaml extension
-
+    Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}  " coc-rust-analyzer extension
+    Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}        " coc-pyright extension
     Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}         " file browsing
 
-    Plug 'puremourning/vimspector'                                                  " debugger
-
+    " useful vim script based plugins
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
     Plug 'NLKNguyen/papercolor-theme'                                               " eye-friendly colorscheme
@@ -24,6 +20,7 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'jiangmiao/auto-pairs'                                                     " brackets auto-closing
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
+    Plug 'puremourning/vimspector'                                                  " debugger
 
     " tpope is awesome!
     Plug 'tpope/vim-fugitive'                                                       " git integration
@@ -68,6 +65,7 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" highlight trailing whitespace
 :highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 :autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 :match ExtraWhitespace /\s\+$/

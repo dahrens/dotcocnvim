@@ -22,7 +22,7 @@ git clone https://github.com/necabo/dotcocnvim.git .cocnvim
 cd .cocnvim && ./install.sh
 ```
 
-## Inlcuded plugins
+## Included plugins
 
 Have a look at `init.vim`.
 
