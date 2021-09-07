@@ -10,10 +10,14 @@ Requirements:
 - npm (npx is used during installation)
 - nodejs (see https://github.com/neoclide/coc.nvim)
 - yarn (see https://github.com/neoclide/coc.nvim)
+
+*Optional*
+
+- ripgrep
+- bat
 - rust-analyzer
 - flake8 (Python PEP8 linter, configured in coc-settings.json)
-- ripgrep
-- ctags
+- black
 - a clipboard tool of your choice (`:h clipboard`)
 
 ```bash
