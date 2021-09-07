@@ -1,5 +1,9 @@
 call plug#begin('~/.cocnvim/plugged')
 
+    " fzf
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
+    Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
+
     " coc and extension plugins
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}              " completions, LSP, etc.
     Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}              " coc-json extension
@@ -14,8 +18,7 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}         " file browsing
 
     " useful vim script based plugins
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
-    Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
+    Plug 'antoinemadec/coc-fzf'                                                     " coc lists in fzf
     Plug 'NLKNguyen/papercolor-theme'                                               " eye-friendly colorscheme
     Plug 'itchyny/lightline.vim'                                                    " status bar
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
@@ -88,10 +91,10 @@ silent! colorscheme PaperColor
 " --------------------------------------------------------------------------------
 " fzf                                                                            |
 " --------------------------------------------------------------------------------
-map <silent><expr> <C-p> fugitive#head() != '' ? ':GFiles --cached --others --exclude-standard<CR>' : ':Files<CR>'
-
 let g:fzf_layout = {'window': {'width': 0.90, 'height': 0.90}}
 let g:fzf_preview_window = 'right:70%'
+let g:coc_fzf_preview = ''
+let g:coc_fzf_opts = []
 
 " --column: Show column number
 " --line-number: Show line number
@@ -104,6 +107,19 @@ let g:fzf_preview_window = 'right:70%'
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
 command! -bang -nargs=* RgAll call fzf#vim#grep('rg --column --line-number --no-heading --ignore-case --no-ignore --hidden --follow --glob "!*/.git/*" --color "always" '.shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
+
+map <silent><expr> <leader>ff fugitive#head() != '' ? ':GFiles --cached --others --exclude-standard<CR>' : ':Files<CR>'
+map <silent> <leader>fa :Files<CR>
+map <silent> <leader>frg :Rg<CR>
+map <silent> <leader>fra :RgAll<CR>
+map <silent> <leader>fss :Ag<CR>
+map <silent> <leader>fh :Helptags<CR>
+map <silent> <leader>fgh :Commits<CR>
+map <silent> <leader>fgb :BCommits<CR>
+map <silent> <leader>fm :Marks<CR>
+map <silent> <leader>fc :Commands<CR>
+map <silent> <leader>fo :CocFzfList outline<CR>
+map <silent> <leader>fsn :CocFzfList snippets<CR>
 
 " --------------------------------------------------------------------------------
 " coc.nvim                                                                       |

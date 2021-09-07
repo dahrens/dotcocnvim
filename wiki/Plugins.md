@@ -13,6 +13,7 @@
 * [weirongxu/coc-explorer](https://github.com/weirongxu/coc-explorer) file browsing
 * [junegunn/fzf](https://github.com/junegunn/fzf) fzf binary
 * [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) fzf vim utils
+* [antoinemadec/coc-fzf](https://github.com/antoinemadec/coc-fzf) coc lists in fzf
 * [NLKNguyen/papercolor-theme](https://github.com/NLKNguyen/papercolor-theme) eye-friendly colorscheme
 * [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) status bar
 * [honza/vim-snippets](https://github.com/honza/vim-snippets) snippets for various languages

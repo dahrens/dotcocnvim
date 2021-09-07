@@ -2,7 +2,6 @@
 
 | Key                          | Description                                       |
 | ---------------------------- | ------------------------------------------        |
-| `Ctrl`-`p`                   | Open fuzzy find                                   |
 | `leader`-`/`                 | Remove search highlights                          |
 | `Y`                          | Yank from cursor to line end (like `D`)           |
 | `F1`                         | Open :help                                        |
@@ -26,6 +25,19 @@
 | `leader`-`Y`                 | Copy to clipboard from cursor to line end         |
 | `leader`-`p`                 | Paste from clipboard below cursor line            |
 | `leader`-`P`                 | Paste from clipboard above cursor line            |
+| **fzf**                      |                                                   |
+| `leader`-`ff`                | Fzf in :Gfiles if in a git repo otherwise :Files  |
+| `leader`-`fa`                | Fzf in :Files                                     |
+| `leader`-`frg`               | Fzf in :Rg                                        |
+| `leader`-`fra`               | Fzf in :RgAll                                     |
+| `leader`-`fss`               | Fzf in :Ag aka silver searcher                    |
+| `leader`-`fh`                | Fzf in :Helptags                                  |
+| `leader`-`fgh`               | Fzf in :Commits (**g**it **h**istory)             |
+| `leader`-`fgb`               | Fzf in :BCommits (**g**it histoy of **b**uffer)   |
+| `leader`-`fm`                | Fzf in :Marks                                     |
+| `leader`-`fc`                | Fzf in :Commands                                  |
+| `leader`-`fo`                | Fzf in Outline (:CocFzfList outline)              |
+| `leader`-`fsn`               | Fzf in Snippets (:CocFzfList snippets)            |
 | **CoC**                      |                                                   |
 | `Ctrl`-`space`               | Trigger completion (triggers automatically)       |
 | `Ctrl`-`h`                   | Goto previous error                               |
