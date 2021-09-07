@@ -45,6 +45,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set inccommand=nosplit
+set termguicolors
 
 " search
 set ignorecase
@@ -110,9 +111,6 @@ command! -bang -nargs=* RgAll call fzf#vim#grep('rg --column --line-number --no-
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
-set cmdheight=2
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
@@ -237,4 +235,4 @@ set nocompatible  " this is default as soon as the is a local .vimrc, as it is e
 filetype plugin on
 " syntax on  " this is already set by a plugin
 let g:vimwiki_list = [{'path': '~/.config/nvim/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_global_ext = 0  " don't threat all .md files with filetype vimwiki
+let g:vimwiki_global_ext = 0  " don't treat all .md files with filetype vimwiki
