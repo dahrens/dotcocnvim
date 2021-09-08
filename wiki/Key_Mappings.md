@@ -5,7 +5,7 @@
 | `leader`-`/`                 | Remove search highlights                          |
 | `Y`                          | Yank from cursor to line end (like `D`)           |
 | `F1`                         | Open :help                                        |
-| `F2`                         | Open file browser                                 |
+| `F2`                         | Open file browser (netrw)                         |
 | `F3`                         | Toggle paste mode                                 |
 | **Debugger**                 |                                                   |
 | `F4`                         | Restart debugger                                  |

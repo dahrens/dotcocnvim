@@ -10,7 +10,6 @@
 * [neoclide/coc-yaml](https://github.com/neoclide/coc-yaml) coc-yaml extension
 * [fannheyward/coc-rust-analyzer](https://github.com/fannheyward/coc-rust-analyzer) coc-rust-analyzer extension
 * [fannheyward/coc-pyright](https://github.com/fannheyward/coc-pyright) coc-pyright extension
-* [weirongxu/coc-explorer](https://github.com/weirongxu/coc-explorer) file browsing
 * [junegunn/fzf](https://github.com/junegunn/fzf) fzf binary
 * [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) fzf vim utils
 * [antoinemadec/coc-fzf](https://github.com/antoinemadec/coc-fzf) coc lists in fzf
