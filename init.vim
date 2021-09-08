@@ -78,7 +78,6 @@ vnoremap <leader>P "+P
 nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
 set pastetoggle=<F3>
-set guicursor=
 
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
