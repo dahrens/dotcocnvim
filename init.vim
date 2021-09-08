@@ -134,7 +134,8 @@ set signcolumn=yes
 inoremap <silent><expr> <c-space> coc#refresh()
 " When the <Enter> key is pressed while the popup menu is visible, it only
 " hides the menu. Use this mapping to close the menu.
-inoremap <expr> <cr> (pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>")
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Close preview window when completion is done
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
