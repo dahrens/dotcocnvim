@@ -1,28 +1,22 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["rust"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "python",
+    "sh",
+    "markdown",
+    "yaml",
+    "json"
+  ],
 
-    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.procMacro.enable": true,
 
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "/usr/bin/flake8",
-    "python.formatting.provider":"black",
-    "python.formatting.blackPath": "/usr/bin/black",
-    "python.formatting.blackArgs": ["--experimental-string-processing"],
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "/usr/bin/flake8",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/bin/black",
+  "python.formatting.blackArgs": ["--experimental-string-processing"],
 
-    "git.enableGutters": true,
-
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": ["c", "cpp", "objc", "objcpp"],
-            "rootPatterns": [".ccls", "compile_commands.json", ".git/"],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
-        }
-    }
+  "git.enableGutters": true
 }

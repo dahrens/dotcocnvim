@@ -1,20 +1,31 @@
 call plug#begin('~/.cocnvim/plugged')
 
+    " tpope is awesome!
+    Plug 'tpope/vim-fugitive'                                                       " git integration
+    Plug 'tpope/vim-commentary'                                                     " commenting
+    Plug 'tpope/vim-surround'                                                       " change surroundings in place
+    Plug 'tpope/vim-repeat'                                                         " allow repeating plugin mappings
+    Plug 'tpope/vim-unimpaired'                                                     " handy bracket mappings
+
     " fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
 
     " coc and extension plugins
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}              " completions, LSP, etc.
-    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}              " coc-json extension
     Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}             " coc-pairs extension
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}               " coc-git extension
     Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}          " coc-snippets extension
     Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}         " coc-highlight extension
-    Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}              " coc-java extension
+    " coc markup language extensions
+    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}              " coc-json extension
     Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}              " coc-yaml extension
+    Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}   " coc-markdownlint extension
+    " coc programming language extensions
+    Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}              " coc-java extension
     Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}  " coc-rust-analyzer extension
     Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}        " coc-pyright extension
+    Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}                  " coc-sh extension
 
     " useful vim script based plugins
     Plug 'antoinemadec/coc-fzf'                                                     " coc lists in fzf
@@ -24,13 +35,8 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
     Plug 'puremourning/vimspector'                                                  " debugger
     Plug 'vimwiki/vimwiki'                                                          " well - a wiki, for vim
+    Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }                                        " bash auto formatting
 
-    " tpope is awesome!
-    Plug 'tpope/vim-fugitive'                                                       " git integration
-    Plug 'tpope/vim-commentary'                                                     " commenting
-    Plug 'tpope/vim-surround'                                                       " change surroundings in place
-    Plug 'tpope/vim-repeat'                                                         " allow repeating plugin mappings
-    Plug 'tpope/vim-unimpaired'                                                     " handy bracket mappings
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -275,3 +281,10 @@ filetype plugin on
 " syntax on  " this is already set by a plugin
 let g:vimwiki_list = [{'path': '~/.config/nvim/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0  " don't treat all .md files with filetype vimwiki
+
+" shfmt
+if executable('shfmt')
+  let &l:formatprg='shfmt -i ' . &l:shiftwidth . ' -ln posix -sr -ci -s'
+endif
+let g:shfmt_extra_args = '-i 2'
+let g:shfmt_fmt_on_save = 1
