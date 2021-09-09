@@ -11,21 +11,8 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
 
-    " coc and extension plugins
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}              " completions, LSP, etc.
-    Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}             " coc-pairs extension
-    Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}               " coc-git extension
-    Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}          " coc-snippets extension
-    Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}         " coc-highlight extension
-    " coc markup language extensions
-    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}              " coc-json extension
-    Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}              " coc-yaml extension
-    Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}   " coc-markdownlint extension
-    " coc programming language extensions
-    Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}              " coc-java extension
-    Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}  " coc-rust-analyzer extension
-    Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}        " coc-pyright extension
-    Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}                  " coc-sh extension
+    " coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}                                 " completions, LSP, etc.
 
     " useful vim script based plugins
     Plug 'antoinemadec/coc-fzf'                                                     " coc lists in fzf
@@ -38,6 +25,20 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }                                        " bash auto formatting
 
 call plug#end()
+
+let g:coc_global_extensions = [
+    \'coc-pairs',
+    \'coc-git',
+    \'coc-snippets',
+    \'coc-highlight',
+    \'coc-json',
+    \'coc-yaml',
+    \'coc-markdownlint',
+    \'coc-java',
+    \'coc-rust-analyzer',
+    \'coc-pyright',
+    \'coc-sh',
+\]
 
 let mapleader = "\<Space>"
 
