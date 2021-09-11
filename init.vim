@@ -16,13 +16,14 @@ call plug#begin('~/.cocnvim/plugged')
 
     " useful vim script based plugins
     Plug 'antoinemadec/coc-fzf'                                                     " coc lists in fzf
-    Plug 'NLKNguyen/papercolor-theme'                                               " eye-friendly colorscheme
     Plug 'itchyny/lightline.vim'                                                    " status bar
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
     Plug 'puremourning/vimspector'                                                  " debugger
     Plug 'vimwiki/vimwiki'                                                          " well - a wiki, for vim
     Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }                                        " bash auto formatting
+
+    Plug 'arcticicestudio/nord-vim'                                                 " eye-friendly colorscheme
 
 call plug#end()
 
@@ -90,8 +91,7 @@ set pastetoggle=<F3>
 set shortmess+=c
 
 " set colorscheme
-set background=dark
-silent! colorscheme PaperColor
+silent! colorscheme nord
 
 " --------------------------------------------------------------------------------
 " fzf                                                                            |
@@ -196,7 +196,12 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Don't show modes as lightline also does so
 set noshowmode
 
+if !has('gui_running')
+  set t_Co=256
+endif
+
 let g:lightline = {
+  \   'colorscheme': 'nord',
   \   'active': {
   \     'left': [ [ 'mode', 'paste' ],
   \               ['cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] ],
