@@ -5,7 +5,8 @@
     "sh",
     "markdown",
     "yaml",
-    "json"
+    "json",
+    "haskell"
   ],
 
   "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
@@ -18,5 +19,26 @@
   "python.formatting.blackPath": "/usr/bin/black",
   "python.formatting.blackArgs": ["--experimental-string-processing"],
 
-  "git.enableGutters": true
+  "git.enableGutters": true,
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": ["hs", "lhs", "haskell"],
+      "initializationOptions": {
+        "languageServerHaskell": {
+          "hlintOn": true,
+          "maxNumberOfProblems": 10,
+          "completionSnippetsOn": true
+        }
+      }
+    }
+  }
 }
