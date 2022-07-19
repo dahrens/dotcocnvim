@@ -24,6 +24,7 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }                                        " bash auto formatting
 
     Plug 'arcticicestudio/nord-vim'                                                 " eye-friendly colorscheme
+    Plug 'jparise/vim-graphql'
 
 call plug#end()
 
