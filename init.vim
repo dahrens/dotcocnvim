@@ -20,7 +20,6 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'honza/vim-snippets'                                                       " snippets for various languages
     Plug 'editorconfig/editorconfig-vim'                                            " https://editorconfig.org/
     Plug 'puremourning/vimspector'                                                  " debugger
-    Plug 'vimwiki/vimwiki'                                                          " well - a wiki, for vim
     Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }                                        " bash auto formatting
 
     Plug 'arcticicestudio/nord-vim'                                                 " eye-friendly colorscheme
