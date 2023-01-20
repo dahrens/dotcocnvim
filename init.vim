@@ -113,7 +113,7 @@ let g:coc_fzf_opts = []
 " --color: Search color options
 command! -bang -nargs=* RgAll call fzf#vim#grep('rg --column --line-number --no-heading --ignore-case --no-ignore --hidden --follow --glob "!*/.git/*" --color "always" '.shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
 
-map <silent><expr> <leader>ff fugitive#head() != '' ? ':GFiles --cached --others --exclude-standard<CR>' : ':Files<CR>'
+map <silent><expr> <leader>ff FugitiveHead() != '' ? ':GFiles --cached --others --exclude-standard<CR>' : ':Files<CR>'
 map <silent> <leader>fa :Files<CR>
 map <silent> <leader>frg :Rg<CR>
 map <silent> <leader>fra :RgAll<CR>
@@ -218,7 +218,7 @@ let g:lightline = {
   \ }
 
 function! LightLineFugitive()
-  let _ = fugitive#head()
+  let _ = FugitiveHead()
   return strlen(_) ? "\uf126 "._ : ""
 endfunction
 
