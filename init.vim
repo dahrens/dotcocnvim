@@ -7,9 +7,18 @@ call plug#begin('~/.cocnvim/plugged')
     Plug 'tpope/vim-repeat'                                                         " allow repeating plugin mappings
     Plug 'tpope/vim-unimpaired'                                                     " handy bracket mappings
 
+    " for obsidian.nvim
+    Plug 'hrsh7th/nvim-cmp'
+
     " fzf
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }               " fzf binary
     Plug 'junegunn/fzf.vim'                                                         " fzf vim utils
+
+    " Obisidian
+    Plug 'epwalsh/obsidian.nvim'
+
+    " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}                                 " completions, LSP, etc.
@@ -39,6 +48,7 @@ let g:coc_global_extensions = [
     \'coc-rust-analyzer',
     \'coc-pyright',
     \'coc-sh',
+    \'coc-prettier',
 \]
 
 let mapleader = "\<Space>"
@@ -281,12 +291,43 @@ nmap <F10>        <Plug>VimspectorStepOver
 nmap <F11>        <Plug>VimspectorStepInto
 nmap <F12>        <Plug>VimspectorStepOut
 
-" for vimwiki
-set nocompatible  " this is default as soon as the is a local .vimrc, as it is explicitly asked for, keep it
-filetype plugin on
-" syntax on  " this is already set by a plugin
-let g:vimwiki_list = [{'path': '~/.config/nvim/wiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_global_ext = 0  " don't treat all .md files with filetype vimwiki
+" obsidian
+lua <<EOF
+require("obsidian").setup({
+  dir = "~/Documents/Cerebra",
+  completion = {
+    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+  },
+  note_id_func = function(title)
+    -- Create note IDs in a Zettelkasten format with a timestamp and a prefix.
+    local prefix = ""
+    if title ~= nil then
+      -- If title is given, transform it into valid file name.
+      prefix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+    else
+      -- If title is nil, just add 4 random uppercase letters to the prefix.
+      for _ = 1, 4 do
+        prefix = prefix .. string.char(math.random(65, 90))
+      end
+    end
+    return prefix .. "-" .. tostring(os.time())
+  end
+})
+EOF
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "vim", "help", "markdown", "markdown_inline" },
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = { "markdown" },
+  },
+}
+EOF
 
 " shfmt
 if executable('shfmt')
